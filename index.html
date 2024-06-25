@@ -3,26 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WWFS.com</title>
+    <title>Secured Page</title>
     <style>
       body {
-        background-color: #f7f7f7;
+        font-family: Arial, sans-serif;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
-        font-family: Arial, sans-serif;
       }
-
-      .container {
+      #login-container {
         text-align: center;
       }
-
-      h1 {
-        font-size: 3em;
-        color: #4caf50; /* Green */
-        animation: bounce-in-top 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+      #secured-content {
+        display: none;
+        text-align: center;
       }
 
       p {
@@ -53,24 +49,50 @@
           opacity: 1;
         }
       }
+
+      input {
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <img src="images/winner.webp" alt="Sticker or Image" width="200" />
-      <h1>Congratulations!</h1>
-      <p>You Won!</p>
-      <p>50$</p>
+    <div id="login-container">
+      <h2>Enter Password to Access the Page</h2>
+      <input type="password" id="password" placeholder="Enter password" />
+      <button onclick="checkPassword()">Submit</button>
+      <p id="error-message" style="color: red; display: none">
+        Incorrect password. Please try again.
+      </p>
+    </div>
+
+    <div id="secured-content">
+      <div class="login-container">
+        <img src="images/winner.webp" alt="Sticker or Image" width="200" />
+        <p>Congratulations!</p>
+        <p>You Won!</p>
+        <p>50$</p>
+      </div>
     </div>
 
     <script>
-      var password;
-      var pass1 = '12345';
-      password = prompt('Enter Password To view Page', ' ');
-      if (password == pass1) alert('Correct password, click OK to enter.');
-      else {
-        window.location = 'http://127.0.0.1:5500/index.html';https://github.com/1234ahmad1234/WWFS.github.lb.git
+      function checkPassword() {
+        const enteredPassword = document.getElementById('password').value;
+        const correctPassword = '12345'; // Replace with your password
+
+        if (enteredPassword === correctPassword) {
+          document.getElementById('login-container').style.display = 'none';
+          document.getElementById('secured-content').style.display = 'block';
+        } else {
+          document.getElementById('error-message').style.display = 'block';
+        }
       }
     </script>
   </body>
 </html>
+
