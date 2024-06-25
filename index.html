@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WWFS.com</title>
+    <style>
+      body {
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+        color: #4caf50; /* Green */
+        animation: bounce-in-top 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+      }
+
+      p {
+        font-size: 2em;
+        color: #4caf50; /* Green */
+        animation: bounce-in-bottom 3s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          both;
+      }
+
+      @keyframes bounce-in-top {
+        0% {
+          transform: translateY(-500px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounce-in-bottom {
+        0% {
+          transform: translateY(500px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/winner.webp" alt="Sticker or Image" width="200" />
+      <h1>Congratulations!</h1>
+      <p>You Won!</p>
+      <p>100$</p>
+    </div>
+
+    <script>
+      var password;
+      var pass1 = '12345';
+      password = prompt('Enter Password To view Page', ' ');
+      if (password == pass1) alert('Correct password, click OK to enter.');
+      else {
+        window.location = 'http://127.0.0.1:5500/index.html';https://github.com/1234ahmad1234/WWFS.github.lb.git
+      }
+    </script>
+  </body>
+</html>
